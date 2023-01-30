@@ -62,6 +62,20 @@ public class MovieResource {
                 .orElseGet(() -> Response.status(Response.Status.BAD_REQUEST).build());
     }
 
+    @PUT
+    @Path("{id}")
+    @Transactional
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response updateById(@PathParam("id") Long id, Movie movie) {
+        return movieRepository.findByIdOptional(id)
+                .map(m -> {
+                    m.setTitle(movie.getTitle());
+                    return Response.ok(m).build();
+                })
+                .orElse(Response.status(Response.Status.NOT_FOUND).build());
+    }
+
     @DELETE
     @Transactional
     @Path("{id}")

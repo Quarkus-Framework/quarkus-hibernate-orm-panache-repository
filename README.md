@@ -9,6 +9,8 @@ CRUD application with Quarkus and library Panache, that write HTTP Services and 
 Docker container, process the result, and write the HTTP response.
 
 - In this app we used Hibernate ORM with Panache Repository that focuses on making your entities easy to write in Quarkus.
+- We use `Rest-Assured`, `Junit-5` and `jdbc-h2` for write integration Test using `import-test.sql` file configurated in
+`application.properties` file.
 
 - For Packaging the application, digit: mvn compile package
   After this, running the application digiting: 
@@ -20,6 +22,8 @@ Extension:
 - RESTEasy Jackson: help to write rest service.
 - JDBC-Postgres: we use Postgres as DB.
 - Quarkus Hibernate Panache Repository: Hibernate ORM with Panache library.
+- Junit5, Rest-Assured: integration and unit tests
+- Jdbc-h2: Integrated DB for Testing
 
 ## Running the application in dev mode
 
