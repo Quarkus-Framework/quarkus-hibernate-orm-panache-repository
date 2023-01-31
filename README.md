@@ -24,6 +24,7 @@ Extension:
 - Quarkus Hibernate Panache Repository: Hibernate ORM with Panache library.
 - Junit5, Rest-Assured: integration and unit tests
 - Jdbc-h2: Integrated DB for Testing
+- Config-Yaml: integration of yaml in the project
 
 ## Running the application in dev mode
 
