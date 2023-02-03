@@ -58,8 +58,10 @@ public class MovieResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response create(Movie movie) {
         movieRepository.persist(movie);
-        return Optional.of(movieRepository.isPersistent(movie)).map(m -> Response.created(URI.create("/movies" + movie.getId())).build())
-                .orElseGet(() -> Response.status(Response.Status.BAD_REQUEST).build());
+        if(movieRepository.isPersistent(movie)) {
+            return Response.created(URI.create("/movies" + movie.getId())).build();
+        }
+        return Response.status(Response.Status.BAD_REQUEST).build();
     }
 
     @PUT

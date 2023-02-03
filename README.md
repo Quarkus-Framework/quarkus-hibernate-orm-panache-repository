@@ -23,6 +23,7 @@ Extension:
 - JDBC-Postgres: we use Postgres as DB.
 - Quarkus Hibernate Panache Repository: Hibernate ORM with Panache library.
 - Junit5, Rest-Assured: integration and unit tests
+- Junit5-mockito: using for mocking classes
 - Jdbc-h2: Integrated DB for Testing
 - Config-Yaml: integration of yaml in the project
 
